@@ -15,8 +15,17 @@ Here is a brief overview of the implementation.
 I downloaded the CSV file and read it into a dataframe using the library Pandas.
 Under the transitionMatrix method, I construct a full transition matrix consisting of three states.
 The three states are non-critical, critical (ICU), and death.
-Since the data points are given for 7 days, I take an average of each of the states for each vax status in seven days.
-I use the average points to create a transition matrix
+
+Non-critical | Critical (ICU) | Death
+-- | -- | --
+Non-critical | x11 | x12 | x13
+Critical (ICU) | x21 | x22 | x23
+Death | x31 | x32 | x33
+
+Since the data points are given for 7 days, I take an average of each of the states for each vax status for the seven day points.
+I use the average points to create a transition matrix.
+
+Using the transition matrix, I use the Markov Chain to predict for the user-designated range (in days).
 
 ## Outcome
 
