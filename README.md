@@ -16,7 +16,7 @@ I downloaded the CSV file and read it into a dataframe using the library Pandas.
 Under the transitionMatrix method, I construct a full transition matrix consisting of three states.
 The three states are non-critical, critical (ICU), and death.
 
--- | Non-critical | Critical (ICU) | Death
+Matrix | Non-critical | Critical (ICU) | Death
 -- | -- | --
 Non-critical | x11 | x12 | x13
 Critical (ICU) | x21 | x22 | x23
