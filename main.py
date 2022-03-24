@@ -41,38 +41,42 @@ class PredictCovid:
         # Creating matrix for vaxxed
         vax_deceased = self.vaxxed_df.loc[self.vaxxed_df['clinicalstatus'] ==
                                           'Deceased (based on date of death)',
-                                          'count_of_case'].mean()
+                                          'count_of_case'].mean().round(2)
 
         vax_icu = self.vaxxed_df.loc[self.vaxxed_df['clinicalstatus'] ==
-                                     'ICU', 'count_of_case'].mean()
+                                     'ICU', 'count_of_case'].mean().round(2)
 
         vax_noncritical = 1 - vax_deceased - vax_icu
 
-        self.vaxxed_transMatrix = [[vax_noncritical, vax_icu, vax_deceased],
-                                   [0.45, 0.4, 0.15],
-                                   [0, 0, 1]]
+        self.vaxxed_transMatrix = np.matrix([[vax_noncritical, vax_icu,
+                                             vax_deceased],
+                                             [0.45, 0.4, 0.15],
+                                             [0, 0, 1]])
 
         # Creating matrix for unvaxxed
         unvax_deceased =\
             self.unvaxxed_df.loc[self.unvaxxed_df['clinicalstatus'] ==
                                  'Deceased (based on date of death)',
-                                 'count_of_case'].mean()
+                                 'count_of_case'].mean().round(2)
 
         unvax_icu = self.unvaxxed_df.loc[self.unvaxxed_df['clinicalstatus'] ==
-                                         'ICU', 'count_of_case'].mean()
+                                         'ICU', 'count_of_case'].mean().round(2)
 
         unvax_noncritical = 1 - unvax_deceased - unvax_icu
 
         self.unvaxxed_transMatrix =\
-            [[unvax_noncritical, unvax_icu, unvax_deceased],
-             [0.1, 0.5, 0.4],
-             [0, 0, 1]]
+            np.matrix([[unvax_noncritical, unvax_icu, unvax_deceased],
+                      [0.1, 0.5, 0.4],
+                      [0, 0, 1]])
 
         return self.vaxxed_transMatrix, self.unvaxxed_transMatrix
 
     def markovChain(self, days):
         """
-        Predicts the upcoming months's fatality and ICU
+        Predicts the future days' fatality and ICU
         based on vax status
         """
-        pass
+        vax_predicted = np.linalg.matrix_power(self.vaxxed_transMatrix, days)
+        unvax_predicted = np.linalg.matrix_power(self.unvaxxed_transMatrix,
+                                                 days)
+        return vax_predicted, unvax_predicted
