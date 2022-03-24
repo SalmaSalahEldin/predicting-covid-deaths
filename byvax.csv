@@ -1,0 +1,57 @@
+as_of_date,clinicalstatus,vaccination_status,count_of_case
+2022-03-10,Deceased (based on date of death),Fully Vaccinated,0.14
+2022-03-11,Deceased (based on date of death),Fully Vaccinated,0.13
+2022-03-12,Deceased (based on date of death),Fully Vaccinated,0.14
+2022-03-13,Deceased (based on date of death),Fully Vaccinated,0.13
+2022-03-14,Deceased (based on date of death),Fully Vaccinated,0.13
+2022-03-15,Deceased (based on date of death),Fully Vaccinated,0.11
+2022-03-16,Deceased (based on date of death),Fully Vaccinated,0.12
+2022-03-17,Deceased (based on date of death),Fully Vaccinated,0.13
+2022-03-18,Deceased (based on date of death),Fully Vaccinated,0.13
+2022-03-19,Deceased (based on date of death),Fully Vaccinated,0.13
+2022-03-20,Deceased (based on date of death),Fully Vaccinated,0.13
+2022-03-21,Deceased (based on date of death),Fully Vaccinated,0.13
+2022-03-22,Deceased (based on date of death),Fully Vaccinated,0.11
+2022-03-23,Deceased (based on date of death),Fully Vaccinated,0.09
+2022-03-10,Deceased (based on date of death),Non-Fully Vaccinated,0.57
+2022-03-11,Deceased (based on date of death),Non-Fully Vaccinated,0.54
+2022-03-12,Deceased (based on date of death),Non-Fully Vaccinated,0.57
+2022-03-13,Deceased (based on date of death),Non-Fully Vaccinated,0.52
+2022-03-14,Deceased (based on date of death),Non-Fully Vaccinated,0.49
+2022-03-15,Deceased (based on date of death),Non-Fully Vaccinated,0.5
+2022-03-16,Deceased (based on date of death),Non-Fully Vaccinated,0.44
+2022-03-17,Deceased (based on date of death),Non-Fully Vaccinated,0.34
+2022-03-18,Deceased (based on date of death),Non-Fully Vaccinated,0.34
+2022-03-19,Deceased (based on date of death),Non-Fully Vaccinated,0.31
+2022-03-20,Deceased (based on date of death),Non-Fully Vaccinated,0.34
+2022-03-21,Deceased (based on date of death),Non-Fully Vaccinated,0.34
+2022-03-22,Deceased (based on date of death),Non-Fully Vaccinated,0.28
+2022-03-23,Deceased (based on date of death),Non-Fully Vaccinated,0.26
+2022-03-10,ICU,Fully Vaccinated,0.73
+2022-03-11,ICU,Fully Vaccinated,0.71
+2022-03-12,ICU,Fully Vaccinated,0.69
+2022-03-13,ICU,Fully Vaccinated,0.65
+2022-03-14,ICU,Fully Vaccinated,0.61
+2022-03-15,ICU,Fully Vaccinated,0.58
+2022-03-16,ICU,Fully Vaccinated,0.56
+2022-03-17,ICU,Fully Vaccinated,0.55
+2022-03-18,ICU,Fully Vaccinated,0.53
+2022-03-19,ICU,Fully Vaccinated,0.51
+2022-03-20,ICU,Fully Vaccinated,0.49
+2022-03-21,ICU,Fully Vaccinated,0.47
+2022-03-22,ICU,Fully Vaccinated,0.44
+2022-03-23,ICU,Fully Vaccinated,0.43
+2022-03-10,ICU,Non-Fully Vaccinated,2.15
+2022-03-11,ICU,Non-Fully Vaccinated,2.14
+2022-03-12,ICU,Non-Fully Vaccinated,2.13
+2022-03-13,ICU,Non-Fully Vaccinated,2.05
+2022-03-14,ICU,Non-Fully Vaccinated,2.01
+2022-03-15,ICU,Non-Fully Vaccinated,1.99
+2022-03-16,ICU,Non-Fully Vaccinated,1.84
+2022-03-17,ICU,Non-Fully Vaccinated,1.76
+2022-03-18,ICU,Non-Fully Vaccinated,1.72
+2022-03-19,ICU,Non-Fully Vaccinated,1.58
+2022-03-20,ICU,Non-Fully Vaccinated,1.5
+2022-03-21,ICU,Non-Fully Vaccinated,1.36
+2022-03-22,ICU,Non-Fully Vaccinated,1.19
+2022-03-23,ICU,Non-Fully Vaccinated,1.08
