@@ -22,7 +22,7 @@ The model is used to answer questions such as:
 The dataset has been obtained via the [Ministry of Health website](https://data.gov.sg/dataset/covid-19-case-numbers?resource_id=783f0c4c-caf7-4818-8683-760f3d7f0757). The dataset is called "7-Day moving average of deaths & active cases in ICU, per 100k population, by vax status." 
 
 ## Method
-The details of each function are documented via comments in in [main.py](main.py). 
+The details of each function are documented via comments in [main.py](main.py). 
 Here is a brief overview of the implementation.
 Taking the average of the 7-day data points given, I construct a full transition matrix consisting of the following states: Non-critical, Critical, and Death.
 
