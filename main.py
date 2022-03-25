@@ -9,13 +9,15 @@ class PredictCovid:
         """
         try:
             # Read csv file
-            df = pd.read_csv("byvax.csv")
+            df = pd.read_csv("resources/byvax.csv")
 
             # Store two dataframes based on vax status
             vaxxed = df['vaccination_status'] == 'Fully Vaccinated'
             unvaxxed = df['vaccination_status'] == 'Non-Fully Vaccinated'
             self.vaxxed_df = df[vaxxed]
             self.unvaxxed_df = df[unvaxxed]
+            self.unvaxxed_df['count_of_case'] =\
+                self.unvaxxed_df['count_of_case'].div(2.2)
 
             # Initializing the transition matrix
             self.vaxxed_transMatrix = np.zeros((3, 3))
@@ -50,7 +52,7 @@ class PredictCovid:
 
         self.vaxxed_transMatrix = np.matrix([[vax_noncritical, vax_icu,
                                              vax_deceased],
-                                             [0.45, 0.4, 0.15],
+                                             [0.12, 0.4, 0.46],
                                              [0, 0, 1]])
 
         # Creating matrix for unvaxxed
@@ -66,7 +68,7 @@ class PredictCovid:
 
         self.unvaxxed_transMatrix =\
             np.matrix([[unvax_noncritical, unvax_icu, unvax_deceased],
-                      [0.1, 0.5, 0.4],
+                      [0.05, 0.2, 0.75],
                       [0, 0, 1]])
 
         return self.vaxxed_transMatrix, self.unvaxxed_transMatrix
@@ -76,7 +78,7 @@ class PredictCovid:
         Predicts the future days' fatality and ICU
         based on vax status
         """
-        vax_predicted = np.linalg.matrix_power(self.vaxxed_transMatrix, days)
+        vax_predicted = np.linalg.matrix_power(self.vaxxed_transMatrix, days).round(2)
         unvax_predicted = np.linalg.matrix_power(self.unvaxxed_transMatrix,
-                                                 days)
+                                                 days).round(2)
         return vax_predicted, unvax_predicted

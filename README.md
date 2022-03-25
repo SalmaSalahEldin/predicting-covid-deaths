@@ -25,10 +25,36 @@ Death | x31 | x32 | x33
 Since the data points are given for 7 days, I take an average of each of the states for each vax status for the seven day points.
 I use the average points to create a transition matrix.
 
+The transition states for vaccinated people are shown here:
+
+![Transition Matrix](resources/vax_transitionmatrix.png)
+
+And the non-vaccinated people:
+
+![Transition Matrix](resources/unvax_transitionmatrix.png)
+
 Using the transition matrix, I use the Markov Chain to predict for the user-designated range (in days).
 
 ## Outcome
+After 6 days, the markov chain predicted the following for vaxed:
+
+Transition Matrix | Non-critical | Critical (ICU) | Death
+-- | -- | -- | --
+Non-critical | 0.02 | 0.06 | 0.89
+Critical (ICU) | 0.01 | 0.03 | 0.92
+Death | 0 | 0 | 1
+
+And the following for unvaxed:
+
+Transition Matrix | Non-critical | Critical (ICU) | Death
+-- | -- | -- | --
+Non-critical | 0 | 0 | 1
+Critical (ICU) | 0 | 0 | 1
+Death | 0 | 0 | 1
+
+We can already see the numbers converging to death regardless of the starting state. Based on this, everyone who tests positive could die in a matter of weeks. This is an extremely pessimistic view of how Covid could play out if not for drastic measures taken. 
 
 ## Assumptions and Limitations
-Along the way, I realized that there is no data to represent the state change from critical to death.
-I looked at 
+Along the way, I realized that there is no data to represent the state change from critical to death. I tried to obtain the data by comparing the number of covid patients utilizing the ICU bed versus the number of people died that day, but because the data for daily death toll does not separate patients from ICU versus patients from non-critical (non-ICU) beds, this approach was to no avail. In the end, I took the average ICU mortality rate from the [Singapore Medical Journal](http://www.smj.org.sg/article/factors-associated-mortality-among-patients-active-pulmonary-tuberculosis-requiring). 
+
+Another limitation is that the state of negative-tested is not included in the transition matrix. This makes the stochastic process an inaccurate representation of the reality, as people do test negative as an alternative to staying ill or dying. This may have been the reason for such a pessimistic convergence of the model.
