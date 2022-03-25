@@ -1,5 +1,17 @@
 # Project 2
 
+## Requirements
+To install the requirements please run:
+```bash
+$ pip install -r requirements.txt
+```
+
+## Running the tests
+The tests are written in pytest format such that each crucial Python file with a name `x.py` has an accompanying test file `test_x.py`.  Hence, to run all the tests, simply run:
+```bash
+$ pytest
+```
+
 ## Introduction
 This project predicts and compares the possibility of deaths, and critical states of covid-positive patients in Singapore for the upcoming day based on vaccination status using Markov Chain.
 The model is used to answer questions such as: 
