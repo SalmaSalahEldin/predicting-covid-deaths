@@ -3,8 +3,12 @@ from main import PredictCovid
 test = PredictCovid()
 vaxed_transitionMatrix, unvaxed_transitionMatrix = test.transitionMatrix()
 
+print('vaxed_transitionMatrix')
 print(vaxed_transitionMatrix)
+
+print('unvaxed_transitionMatrix')
 print(unvaxed_transitionMatrix)
+
 # Testing that the csv file is read correctly
 assert len(test.vaxxed_df.columns) == 4
 assert len(test.unvaxxed_df.columns) == 4
@@ -17,5 +21,8 @@ assert unvaxed_transitionMatrix[2, 2] == 1
 day = 6
 predict_vax, predict_unvax = test.markovChain(day)
 
+print('predict_vax')
 print(predict_vax)
+
+print('predict_unvax')
 print(predict_unvax)
